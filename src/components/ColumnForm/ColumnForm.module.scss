@@ -1,0 +1,27 @@
+ 
+.columnForm { 
+    display: flex; 
+    justify-content: center;  
+    align-items: baseline; 
+    align-content: space-around; 
+    padding: 40px 0 40px 0;
+    flex-wrap: wrap;
+}
+
+.inputLabel { margin: 0 10px; }
+
+.buttonField {
+    margin: 0 0 0 10px;
+}
+
+@media (max-width: 767px) {
+
+    .columnForm {
+        flex-direction: column;
+    }
+
+    .buttonField {
+        margin: 10px auto 0 auto;
+    }
+}
+
