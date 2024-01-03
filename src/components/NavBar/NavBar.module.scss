@@ -1,0 +1,34 @@
+@use "sass:math";
+@import '../../styles/settings.scss';
+
+.icon::before {
+    padding-right: $base-size;
+    color: $color-light;
+    font-size: ($base-size * 2.5);
+    vertical-align: middle;
+    position: relative;
+    top: 8px ;
+  }
+
+  .navBar {
+    background-color: darken($color-dark, 3%);
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navLinks {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    display: inline;
+    padding: 0 15px;
+  }
+
+  a { 
+    color: $color-light; 
+    text-decoration: none;
+    font-size: ($base-size * 1.5);
+    font-weight: 600;
+  }
