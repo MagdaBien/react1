@@ -1,0 +1,10 @@
+@use "sass:math";
+@import '../../styles/settings.scss';
+
+.lists {
+  margin-top: $base-size * 2;
+}
+
+.heading {
+  text-align: center;
+}
