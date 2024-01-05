@@ -3,10 +3,14 @@ import { useState } from 'react';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { search } from '../../redux/store';
+import { getSearchItem } from '../../redux/store';
 
 const SearchForm = () => {
-    const [searchItem, setsearchItem] = useState('');
+    const searchStart = useSelector(getSearchItem);    
+    const [searchItem, setsearchItem] = useState(searchStart);
+    //console.log("search z magazynu: ", searchStart, "| search ze stanu (z wyszukiwarki): ", searchItem);
     const dispatch = useDispatch();
 
     const handleSubmit = e => {
@@ -16,7 +20,7 @@ const SearchForm = () => {
 
     return (
         <form  onSubmit={handleSubmit}  className={styles.searchForm}>
-            <TextInput onChange={e => setsearchItem(e.target.value)} placeholder="Search…" />
+            <TextInput value={searchItem} onChange={e => setsearchItem(e.target.value)}  placeholder="Search..." />
             <Button>
                 <span className="fa fa-search" />
             </Button>

@@ -33,6 +33,7 @@ export const getFilteredCards = ({cards, searchItem }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, searchItem));
 export const getAllColumns = (state) => state.columns; 
 export const getAllLists = (state) => state.lists; 
+export const getSearchItem = (state) => state.searchItem;
 //export const getListById = ({lists}, listId) => lists.filter(list => list.id === listId);
 export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
 export const getColumnsByListId = ({columns}, listId) => columns.filter(column => column.listId === listId);
