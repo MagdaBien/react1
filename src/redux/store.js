@@ -14,7 +14,9 @@ const reducer = (state, action) => {
     case 'ADD_CARD':
       return { ...state, cards: [...state.cards, { id: shortid(), ...action.payload }]}; 
     case 'SEARCH_ITEM':  
-      return { ...state, searchItem: action.payload };    
+      return { ...state, searchItem: action.payload }; 
+    case 'TOGGLE_CARD_FAVORITE':
+      return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };         
     default:
       return state;
   }
@@ -37,9 +39,11 @@ export const getSearchItem = (state) => state.searchItem;
 //export const getListById = ({lists}, listId) => lists.filter(list => list.id === listId);
 export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
 export const getColumnsByListId = ({columns}, listId) => columns.filter(column => column.listId === listId);
+export const getFavouriteCards = ({cards}) => cards.filter(card => card.isFavorite === true);
 
 // action creators
 export const addList = payload => ({ type: 'ADD_LIST', payload });
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCard = payload => ({ type: 'ADD_CARD', payload });
 export const search = payload => ({ type: 'SEARCH_ITEM', payload });
+export const favourite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', payload });
