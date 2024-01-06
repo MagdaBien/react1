@@ -4,8 +4,8 @@ import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { search } from '../../redux/store';
-import { getSearchItem } from '../../redux/store';
+import { search } from '../../redux/searchItemRedux';
+import { getSearchItem } from '../../redux/searchItemRedux';
 
 const SearchForm = () => {
     const searchStart = useSelector(getSearchItem);    
