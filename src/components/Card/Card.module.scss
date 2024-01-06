@@ -14,12 +14,14 @@
 }
 
 button {
+    
 
 &.desactive:hover {
     background: $color-light;
     border: 1px solid $color-warning;
     border-radius: $radius;
     color: $color-warning;
+    margin: 0;
     }   
 
 &.active:hover {
@@ -27,12 +29,14 @@ button {
     border: 1px solid lighten($color-dark, 60%);
     border-radius: $radius;
     color: lighten($color-dark, 45%);
+    margin: 0;
     }       
 
 &.desactive{
     background: $color-light;
     color: lighten($color-dark, 45%);
     border: 1px solid $color-light;
+    margin: 0;
 }
 
 &.active {
@@ -40,5 +44,6 @@ button {
     background: $color-light;
     color: $color-warning;
     border: 1px solid $color-light;
+    margin: 0;
   }
 }
